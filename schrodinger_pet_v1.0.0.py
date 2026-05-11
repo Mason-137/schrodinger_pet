@@ -2070,14 +2070,7 @@ def save_pet_config(data):
 
 
 def get_downloads_folder_path(preferred=None):
-    """返回当前下载文件夹路径。
-
-    优先级：
-    1. 调用方传入路径；
-    2. 设置文件中的 downloads_path；
-    3. 用户指定过的 D:/Mason/Downloads；
-    4. 系统用户 Downloads。
-    """
+    
     def clean_path(value):
         if not value:
             return None
@@ -6239,7 +6232,7 @@ class PetSettingsDialog(QDialog):
 
         path_row = QHBoxLayout()
         self.downloads_path_edit = QLineEdit()
-        self.downloads_path_edit.setPlaceholderText(r"例如：D:\Mason\Downloads")
+        self.downloads_path_edit.setPlaceholderText(r"例如：C:\Users\YourName\Downloads"")
         btn_browse_downloads = QPushButton("浏览...")
         btn_browse_downloads.clicked.connect(self._browse_downloads_folder)
         btn_open_downloads = QPushButton("打开")
